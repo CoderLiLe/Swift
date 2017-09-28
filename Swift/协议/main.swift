@@ -271,3 +271,26 @@ print(arrPerson)
 
 // 7.3 CustomStringConvertible协议用于自定义打印
 
+// 8.协议中的 where 关键字: where 可以和 for in 循环配合实现筛选, where同样可以在协议扩展中;
+protocol SomeProtocol2 {
+    associatedtype OwnElement
+    func elementMethod1(element: OwnElement)
+    func elementMethod2(element: OwnElement)
+}
+
+extension SomeProtocol2 where Self: Collection {
+    func showCount(){
+        print(self.count)
+    }
+}
+extension Array: SomeProtocol2{
+    
+    func elementMethod1(element: String) {
+        print("elementMethod1:\(element)")
+    }
+    func elementMethod2(element: String) {
+        print("elementMethod2:\(element)")
+    }
+}
+[1,2,3].showCount() //3
+
