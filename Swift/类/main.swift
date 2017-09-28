@@ -9,6 +9,16 @@
 import Foundation
 
 /*
+ 对于OC和Swift的初始化，苹果官方给了一些很合理的解释，请点开这里：https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html
+ */
+/*
+ 定义Swift初始化方法，必须遵循三条规则：
+ 1.指定构造器必须调用它直接父类的指定构造器方法
+ 2.便利构造器必须调用同一类中定义的其他初始化方法
+ 3.便利构造器在最后必须调用一个指定构造器。
+ */
+
+/*
 类的基本定义
 Swift中的结构体和类非常相似, 但是又有不同之处
 类是具有相同属性和方法的抽象
