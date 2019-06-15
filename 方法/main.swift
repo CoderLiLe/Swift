@@ -15,7 +15,7 @@ import Foundation
 */
 
 class Person {
-    var _name:String = "lnj"
+    var _name:String = "lile"
     var _age:Int = 30
     // 实例方法一定是通过对象来调用的, 实例方法隶属于某一个类
 //    func setName(name:String, age:Int)
@@ -34,7 +34,7 @@ class Person {
 var p = Person()
 // 由于第一个参数可以通过方法名称指定, 所以默认第一个参数不作为外部参数
 //p.setName("zs", age: 88)
-p.setName("zs", 88)
+p.setName(name: "zs", 88)
 
 //func setName(name:String, age:Int){
 //func setName(name:String,myAge age:Int){
@@ -42,7 +42,7 @@ func setName(name:String, age:Int){
 
 }
 // 实例方法和函数的区别在于, 实例方法会自动将除第一个参数以外的其它参数即当做外部参数又当做内部参数, 而函数需要我们自己指定才会有外部参数, 默认没有
-setName("ls", age:55)
+setName(name: "ls", age:55)
 
 
 /*
@@ -89,7 +89,7 @@ struct Person3 {
     }
 }
 var p3 = Person3()
-p3.setName("zs", age: 99)
+p3.setName(name: "zs", age: 99)
 p3.show()
 
 enum LightSwitch{
@@ -97,10 +97,10 @@ enum LightSwitch{
     mutating func next()
     {
         switch self{
-            case OFF:
-                self = ON
-            case ON:
-                self = OFF
+        case .OFF:
+            self = .ON
+        case .ON:
+            self = .OFF
         }
     }
 }
@@ -122,7 +122,7 @@ if ls == LightSwitch.ON
 */
 
 struct Person4 {
-    var name:String = "lnj"
+    var name:String = "lile"
     static var card: String = "123456"
     func show()
     {
